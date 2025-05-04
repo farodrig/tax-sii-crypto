@@ -27,6 +27,9 @@ packages = [{include = "tax_sii_crypto", from = "src"}]
 # Decrease the maximum line length to 79 characters.
 line-length = 100
 src = ["src"]
+exclude = ["src/db/migrations"]
+
+[tool.ruff.lint]
 select = [
   "E",   # pycodestyle
   "F",   # pyflakes
@@ -39,7 +42,6 @@ select = [
   "TRY", # tryceratops 
   "FLY", # flynt 
 ]
-exclude = ["src/db/migrations"]
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.5"

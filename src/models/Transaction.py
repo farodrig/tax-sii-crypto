@@ -1,4 +1,4 @@
-from uuid import uuid4
+from uuid import uuid4  # noqa: N999
 
 from tortoise.fields import CharEnumField, DatetimeField, FloatField, ForeignKeyRelation, UUIDField
 from tortoise.models import Model
