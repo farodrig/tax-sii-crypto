@@ -5,6 +5,7 @@ description = ""
 authors = [
     {name = "Felipe Rodríguez",email = "farodrig@dcc.uchile.cl"}
 ]
+license = { text = "MIT" }
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
