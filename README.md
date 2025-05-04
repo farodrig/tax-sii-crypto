@@ -3,6 +3,11 @@
 A Python-based tool for processing cryptocurrency transactions, generating buy/sell reports, and managing USD to CLP exchange rates. This project uses Tortoise ORM for database management and supports ETL processes for loading and transforming data from Excel and CSV files.
 For now, this is especifically created for chilean SII calculation and Buda.com
 
+<a href="https://ko-fi.com/farodrig" target="_blank">
+  <img src="https://github.com/user-attachments/assets/c9ac045b-faea-4fac-ac6a-3820fa07b473" alt="Alt Text" height="50">
+</a>
+
+
 ## Features
 
 - **ETL Pipelines**:
