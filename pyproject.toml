@@ -1,0 +1,61 @@
+[project]
+name = "tax-sii-crypto"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Felipe Rodríguez",email = "farodrig@dcc.uchile.cl"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "typer (>=0.15.2,<0.16.0)",
+    "yarl (>=1.19.0,<2.0.0)",
+    "pyexcel (>=0.7.2,<0.8.0)",
+    "pyexcel-xls (>=0.7.1,<0.8.0)",
+    "pyexcel-xlsx (>=0.6.1,<0.7.0)",
+    "python-dotenv (>=1.1.0,<2.0.0)",
+    "tortoise-orm[asyncpg] (>=0.24.2,<0.25.0)",
+    "aerich[toml] (>=0.8.2,<0.9.0)",
+    "pydantic (>=2.11.2,<3.0.0)",
+]
+
+[tool.poetry]
+packages = [{include = "tax_sii_crypto", from = "src"}]
+
+[tool.ruff]
+# Decrease the maximum line length to 79 characters.
+line-length = 100
+src = ["src"]
+select = [
+  "E",   # pycodestyle
+  "F",   # pyflakes
+  "UP",  # pyupgrade
+  "C90", # mccabe
+  "I", # isort
+  "N", # pep8-naming
+  "ERA", # erradicate
+  "PL", # pylint
+  "TRY", # tryceratops 
+  "FLY", # flynt 
+]
+exclude = ["src/db/migrations"]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+pytest-cov = "^6.1.1"
+ruff = "^0.11.4"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+addopts = [
+    "--import-mode=importlib",
+]
+
+[tool.aerich]
+tortoise_orm = "db.tortoise_config.TORTOISE_ORM"
+location = "./src/db/migrations"
+src_folder = "./src"
